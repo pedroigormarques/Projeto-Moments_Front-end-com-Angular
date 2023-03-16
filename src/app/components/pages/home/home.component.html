@@ -1,0 +1,25 @@
+<div class="home-container">
+    <h2>Veja os momentos que estão sendo compartilhados</h2>
+    <div class="search-container">
+        <form>
+            <fa-icon [icon]="faSearch"></fa-icon>
+            <input type="text"  (input)="filtrarMomentos($event)" placeholder="Use para filtrar os momentos">
+        </form>
+    </div>
+
+    <div *ngIf="momentosFiltrados.length > 0; else semMomentos">
+        <div class="moments-container">
+            <div class="moment" *ngFor="let momento of momentosFiltrados">
+                <img *ngIf="momento.image" src="{{urlApiImages}}/{{momento.image}}" alt="erro ao carregar a imagem">
+                <h3>{{momento.title}}</h3>
+                <p class="data">Em: {{momento.created_at}}</p>
+                <p>Comentários: {{momento.comments!.length}}</p>
+                <p><a routerLink="/moments/{{momento.id}}">Detalhes</a></p>
+            </div>
+        </div>
+    </div>
+    <ng-template #semMomentos>
+        <h3>Sem momentos registrados no momento</h3>
+        <a routerLink="/moments/new">Que tal ser o primeiro a compartilhar?</a>
+    </ng-template>
+</div>

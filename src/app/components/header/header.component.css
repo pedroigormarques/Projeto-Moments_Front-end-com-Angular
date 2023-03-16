@@ -1,0 +1,43 @@
+nav {
+    border-bottom: solid 1px black;
+    display: flex;
+    justify-content: space-between;
+}
+
+img {
+    width: 40px;
+    height: 3em;
+}
+
+.logotipo {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    column-gap: 0.6em;
+    padding: 1em;
+}
+
+.logotipo:hover h1 {
+    color: #dec129;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+
+}
+
+.links li {
+    list-style: none;
+    padding: 1em;
+}
+
+#add a {
+    color: #dec129;
+}
+
+#add a:hover {
+    background-color: #efeeee;
+    color: black
+}

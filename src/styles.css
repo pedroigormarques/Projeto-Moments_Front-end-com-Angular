@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0; 
+    font-family: Cambria;
+    box-sizing: border-box;
+    color: #444;
+}
+
+a{
+    text-decoration: none;
+    color: #444;
+    transition: .4s;
+}
+
+a:hover{
+    color: #DEC129;
+}
+
+/*Forms*/
+
+form{
+    width: 450px;
+    margin: 0 auto;
+}
+
+.formGroup{
+    display: flex;
+    flex-direction: column;
+    margin: 1em 0;
+}
+
+.formGroup label{
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-bottom: 0.4em;
+}
+
+.formGroup input,
+.formGroup textarea{
+    color: #777;
+    font-size: 0.8em;
+    padding: 0.6em;
+}
+
+.validation-error p{
+    color: #dc3545;
+    margin-top: 0.4em;
+    border-left: #dc3545 3px solid;
+    padding-left: 0.2em;
+}
+
+button[type="submit"]{
+    background-color: #efefef;
+    border: solid 2px transparent;
+    padding: 0.6em 1em;
+    font-weight: bold;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: 0.4s;
+    border-radius: 10%;
+}
+
+button[type="submit"]:hover{
+    color: #DEC129;
+    border-color: #DEC129;
+    background-color: transparent;
+}
+
+/*buttons*/
+
+
+.edit-btn,
+.remove-btn {
+    border: 1px solid #efefef;
+    padding: .4em 1em;
+    font-size: 1em;
+    margin: 0 .5em;
+    background-color: #fff;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.edit-btn,
+.edit-btn path {
+    color: #007bff;
+    border-color: #007bff;
+}
+
+
+.remove-btn,
+.remove-btn path {
+    color: #dc3545;
+    border-color: #847475;
+}
+
+.edit-btn:hover,
+.edit-btn:hover path {
+    color: #fff;
+    background-color: #007bff;
+}
+
+.remove-btn:hover,
+.remove-btn:hover path {
+    color: #fff;
+    background-color: #dc3545;
+}

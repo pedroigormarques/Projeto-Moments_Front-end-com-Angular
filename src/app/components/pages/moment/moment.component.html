@@ -1,0 +1,37 @@
+<div class="moment-container" *ngIf="momento">
+    <div class="moment">
+        <h2>{{momento.title}}</h2>
+        <img *ngIf="momento.image" src="{{urlApiImages}}/{{momento.image}}" alt="imagem não foi carregada">
+        <h3>Sobre este momento:</h3>
+        <p>{{momento.description}}</p>
+    </div>
+
+    <div class="buttons-container">
+        <h3>Ações:</h3>
+        <div>
+            <a routerLink="/moments/edit/{{momento.id!}}" class="edit-btn">
+                <fa-icon [icon]="faEdit"></fa-icon> Editar
+            </a>
+            <button class="remove-btn" (click)="excluirMomento(momento.id!)">
+                <fa-icon [icon]="faTimes"></fa-icon> Excluir
+            </button>
+        </div>
+    </div>
+
+    <div class="comments-container">
+        <h3>Comentários({{momento.comments!.length}}):</h3>
+        <div *ngIf="momento.comments!.length > 0; else SemComentarios" class="comments-body">
+            <div *ngFor="let comentario of momento.comments" class="comment">
+                <p>{{comentario.text}}</p>
+                <p><b>Por: </b>{{comentario.username}}</p>
+            </div>
+        </div>
+        <ng-template #SemComentarios>
+            <p>Não há comentários</p>
+        </ng-template>
+    </div>
+    <div class="add-comments">
+        <h3>Deixe um comentário:</h3>
+        <app-comment-form (addCommentEmmiter)="addComment($event)"></app-comment-form>
+    </div>
+</div>

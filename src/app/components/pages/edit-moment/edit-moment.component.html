@@ -1,0 +1,4 @@
+<div *ngIf="momento" class="edit-container">
+    <H2>Editando o momento <span>{{momento.title}}</span></H2>
+    <app-moment-form [momentData]="momento" [textoTipoAcaoBotao]="'Editar'" (notificarSubmitForm)="editMoment($event)"></app-moment-form>
+</div>

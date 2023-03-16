@@ -1,0 +1,26 @@
+<form (ngSubmit)="submit()" [formGroup]="momentForm" #formDir="ngForm">
+    <div class="formGroup">
+        <label for="title">Título: </label>
+        <input type="text" formControlName="title" placeholder="De um título a seu momento" >
+        <div *ngIf="title.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="title.errors?.['required']">O título é obrigatório.</p>
+            <p *ngIf="title.errors?.['maxLength']">O título é maior que o suportado.</p>
+        </div>
+    </div>
+    <div class="formGroup">
+        <label for="description">Descrição: </label>
+        <textarea type="text" formControlName="description" placeholder="Faça uma descrição do seu momento"
+            required></textarea>
+        <div *ngIf="description.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="description.errors?.['required']">A descrição é obrigatório.</p>
+        </div>
+    </div>
+    <div class="formGroup">
+        <label for="image">Coloque a foto que mais marcou: </label>
+        <input type="file" (change)="onChangeImage($event)" >
+        <div *ngIf="image.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="image.errors?.['required']">A imagem deve ser do tipo "png".</p>
+        </div>
+    </div>
+    <button type="submit">{{textoTipoAcaoBotao}}</button>
+</form>
